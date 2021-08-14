@@ -4,6 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const ProductCategory = props => {
+  const { product } = props;
+  return (
+    <tr>
+      <th colSpan="2">{product.category}</th>
+    </tr>
+  )
+}
+
 const ProductRow = props => {
   const { product } = props;
 
@@ -25,7 +34,10 @@ const ProductTable = props => {
   // const rows = [];
 
   const rows = products.map(product => (
-    <ProductRow product={product} key={product.name}/>
+    <>
+      <ProductCategory product={product} key={product.category}/>
+      <ProductRow product={product} key={product.name}/>
+    </>
   ))
 
   return (
