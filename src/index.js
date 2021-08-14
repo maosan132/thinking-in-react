@@ -17,7 +17,13 @@ const ProductTable = props => {
         </tr>
       </thead>
       <tbody>
-
+      {products.map(product => (
+          <tr key={product.name}>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.stocked}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   )
