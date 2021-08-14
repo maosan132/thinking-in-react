@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const ProductRow = props => {
-  <tr>
-  <td align="left">{product.name}</td>
-  <td align="right">{product.price}</td>
-  {/* <td>{product.stocked}</td> */}
-</tr>
+  const { product } = props;
+
+  return (
+    <tr>
+      <td align="left">{product.name}</td>
+      <td align="right">{product.price}</td>
+      {/* <td>{product.stocked}</td> */}
+    </tr>
+  )
 }
 
 const ProductTable = props => {
