@@ -4,26 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const ProductRow = props => {
+
+}
+
 const ProductTable = props => {
   const { products } = props;
+  // const rows = [];
+
+  const rows = products.map(product => (
+    <ProductRow product={product} key={product.name}/>
+  ))
 
   return (
     <table>
       <thead>
-        <tr style={{color: "blue", display: "flex"}}>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Stock</th>
+        <tr style={{color: "blue"}}>
+          <th align="left">Name</th>
+          <th align="right">Price</th>
+          {/* <th>Stock</th> */}
         </tr>
       </thead>
       <tbody>
-      {products.map(product => (
-          <tr key={product.name}>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-            <td>{product.stocked}</td>
-          </tr>
-        ))}
+      {rows}
       </tbody>
     </table>
   )
