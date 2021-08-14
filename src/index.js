@@ -7,9 +7,13 @@ import reportWebVitals from './reportWebVitals';
 const ProductRow = props => {
   const { product } = props;
 
+  const colorName = product.stocked ?
+    product.name :
+    <span style={{color: "red"}}>{product.name}</span>;
+
   return (
     <tr>
-      <td align="left">{product.name}</td>
+      <td align="left">{colorName}</td>
       <td align="right">{product.price}</td>
       {/* <td>{product.stocked}</td> */}
     </tr>
