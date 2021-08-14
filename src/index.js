@@ -4,6 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const ProductTable = props => {
+  const { products } = props;
+
+  return (
+    <table>
+      <thead>
+        <tr style={{color: "blue", display: "flex"}}>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  )
+}
+
 const SearchBar = () => {
   return (
     <form>
@@ -12,7 +31,7 @@ const SearchBar = () => {
       <p>
         <input type="checkbox" />
         <span style={{color: "green", fontSize: "smaller"}}>
-          Only show products in stock
+          Only show products in stock!
         </span>
       </p>
     </form>
@@ -25,7 +44,7 @@ const FilterableProductTable = props => {
   return (
     <div style={{fontFamily: "sans-serif"}}>
       <SearchBar />
-      ProductTable here
+      <ProductTable products={products}/>
     </div>
   )
 }
